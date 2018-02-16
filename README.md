@@ -1,10 +1,10 @@
-###RandomUtils
+### RandomUtils
 
 A set of random helper functions to simplify many common random number needs.
 
 The randoms come in two flavors. Random from JavaScript Math.random  and seeded randoms. The seeded randoms alow you to repeat any random sequence using a seed value.
 
-##To use
+## To use
 
 Just include randomUtils.js on your page.
 
@@ -12,7 +12,7 @@ Just include randomUtils.js on your page.
 <script src = "randomUtils.js"></script>
 ```    
 
-##Seeded random
+## Seeded random
 
 Seeded random numbers will repeat the same squesnce of random values from the same seed.
 
@@ -46,17 +46,15 @@ srandSeed(Date.now());
     
     
 
-##Notes on random
+## Notes on random
 
 Please note that seeded randoms are pseudo random using a [linear congruential generator][1]. Be aware of its limitations
 
-https://en.wikipedia.org/wiki/Linear_congruential_generator
 
 The random shuffles used in randomUtils.js use a variation on the [Fisher-Yates shuffle algorithm][2]. 
 
-https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 
-##Random numbers
+## Random numbers
 
 ```Javascript
 randI(min, max)    // random integer from and including min to max - 1 
@@ -79,7 +77,7 @@ srand()             // random float  0 <= float < 1
 ```    
     
     
-##Random odds
+## Random odds
 
 Two functions to get a average of  1 in n  'odds' chance of returning true
 
@@ -95,13 +93,13 @@ srandOdds(odds)      // Chance of returning true 1/odds
 srandOdds()          // Chance of returning true 1/2 
 ```    
     
-##Random array utilities
+## Random array utilities
 
 Note that empty arrays will return undefined  
 
 ```Javascript
 randItem(array)     // returns a randomly selected item from array
-randPick(array)     // return a randomly selected item from the array, removing the item from the array.
+randPick(array)     // return a randomly selected item from array, removing the item from the array.
 randPut(array, item)// Adds item randomly to the array. 
                     // Returns the index the item was add. Each call increases the array length by 1
 randShuffle(array)  // shuffles an array to randomize the content. 
@@ -120,13 +118,13 @@ randShuffle(array)
 Generate random arrays of integers and floats                        
  
 ```Javascript 
-randISet(length,min, max) // returns an array of length containg random integer from and including min to max - 1 
-randISet(length, range)   // returns an array of length containg random integer 0 <= int < range 
-randISet(length)          // returns an array of length containg random integers 0 or 1 
+randISet(length,min, max)// returns an array of length containg random integer from and including min to max-1 
+randISet(length, range)  // returns an array of length containg random integer 0 <= int < range 
+randISet(length)         // returns an array of length containg random integers 0 or 1 
 
-randSet(length,min, max)  // returns an array of length containg random integer from and including min to max - 1 
-randSet(length, range)    // returns an array of length containg random integer 0 <= int < range 
-randSet(length)           // returns an array of length containg random integers 0 or 1 
+randSet(length,min, max) // returns an array of length containg random integer from and including min to max-1 
+randSet(length, range)   // returns an array of length containg random integer 0 <= int < range 
+randSet(length)          // returns an array of length containg random integers 0 or 1 
 ```    
  
 Seeded version
