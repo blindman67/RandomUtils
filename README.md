@@ -1,4 +1,4 @@
-### RandomUtils
+# RandomUtils
 
 A set of random helper functions to simplify many common random number needs.
 
