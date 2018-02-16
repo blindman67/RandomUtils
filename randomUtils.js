@@ -13,13 +13,13 @@ const randShuffle = (a) => {const b = [...a]; a.length = 0; while(b.length > 0){
 /*Seeded random via Linear congruential generator https://en.wikipedia.org/wiki/Linear_congruential_generator */
 const sRand = (() => {
     var seed = 1;
-    const max = 2576436549074795;
+    const max = (2**31) - 1;
     return {  
         get max() { return max }, 
         get seed() { return seed },
         set seed(s) { seed = Math.floor(s) },
-        get randI()  { return seed = ((8765432352450986 * seed) + 8507698654323524) % max },
-        get rand ()  { return (seed = ((8765432352450986 * seed) + 8507698654323524) % max) / max } 
+        get randI() { return seed = (2147483629  * seed + 2147483587 ) % max },
+        get rand () { return (seed = (2147483629  * seed + 2147483587 ) % max) / max } 
     }
 })();
 const srandSeed = (seed) => sRand.seed = seed;
