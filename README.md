@@ -4,13 +4,36 @@ A set of random helper functions to simplify many common random number needs.
 
 The randoms come in two flavors. Random from JavaScript Math.random  and seeded randoms. The seeded randoms alow you to repeat any random sequence using a seed value.
 
-## To use
+
+
+## There are two versions
+
+`Rand` static object and as a set of static functions prefixed with `"rand"` or for seeded `"srand"`
+
+### 'Rand'
+
+
+To use the static object `Rand`
+
+Download randomUtils-Rand.js and add to your page
+
+```Javascript
+<script src = "randomUtils-Rand.js"></script>
+```    
+
+### Constant functions
 
 Just include randomUtils.js on your page.
 
 ```Javascript
 <script src = "randomUtils.js"></script>
 ```    
+
+
+
+## ES6
+
+This project is written using ECMAScript6. If your targets are legacy browsers you will need to use something like Babel to ensure compatability.
 
 ## Seeded random
 
@@ -24,6 +47,8 @@ sRand.seed     // Get set the random seed value.
 sRand.randI    // read only. Returns a random integer from 0 to sRand.max -1
 sRand.rand     // read only. Returns a random float from 0 to < 1
 ```    
+
+Or usinging Rand
     
 You can use it directly via the above functions, or indirectly using the utility functions.    
 
@@ -34,19 +59,23 @@ To set the seed value
 ```Javascript
 sRand.seed = 1;  // set seed value to 1
 sRand.seed = Date.now();  // Less predictable random seed
-```    
-
-or use
-
-```Javascript
 srandSeed(1);     
 srandSeed(Date.now());     
 ```    
-    
+
+or using `Rand`
+
+```Javascript
+Rand.sRand.seed = 1;
+Rand.sRand.seed = Date.now();
+Rand.seed = 1;
+Rand.seed = Date.now();
+```
+
     
     
 
-## Notes on random
+### Notes on random
 
 Please note that seeded randoms are pseudo random using a [linear congruential generator][1]. Be aware of its limitations
 
@@ -54,7 +83,8 @@ Please note that seeded randoms are pseudo random using a [linear congruential g
 The random shuffles used in randomUtils.js use a variation on the [Fisher-Yates shuffle algorithm][2]. 
 
 
-## Random numbers
+
+### Random numbers
 
 ```Javascript
 randI(min, max)    // random integer from and including min to max - 1 
@@ -138,9 +168,53 @@ srandSet(length,min, max)
 srandSet(length, range)   
 srandSet(length)          
 ```    
-    
 
 
+## 'Rand` Object 
+
+List of function signatures. These functions mirror the static functions (above) with some name changes
+
+```Javascript     
+Rand.int(min, max) 
+Rand.int(range) 
+Rand.int() 
+Rand.float(min, max) 
+Rand.float(range) 
+Rand.float() 
+Rand.odds(odds)
+Rand.odds()
+Rand.item(array) 
+Rand.pick(array)
+Rand.put(array, item)
+Rand.setOfFloats(length, min, max)
+Rand.setOfFloats(length, range)
+Rand.setOfFloats(length)
+Rand.setOfInts(length, min, max)
+Rand.setOfInts(length, range)
+Rand.setOfInts(length)
+Rand.shuffle(array)
+
+// seeded randoms
+Rand.seed
+Rand.sInt(min, max) 
+Rand.sInt(range) 
+Rand.sInt() 
+Rand.sFloat(min, max) 
+Rand.sFloat(range) 
+Rand.sFloat() 
+Rand.sOdds(odds)
+Rand.sOdds()
+Rand.sItem(array) 
+Rand.sPick(array)
+Rand.sPut(array, item)
+Rand.sSetOfFloats(length, min, max)
+Rand.sSetOfFloats(length, range)
+Rand.sSetOfFloats(length)
+Rand.sSetOfInts(length, min, max)
+Rand.sSetOfInts(length, range)
+Rand.sSetOfInts(length)
+Rand.sShuffle(array)
+```
     
  
 

@@ -34,3 +34,5 @@ const srandISet = (l, min = 2, max = min + (min = 0)) => {const a = []; while(l-
 
 /* Variation of Fisher-Yates shuffle algorithm. https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle */
 const srandShuffle = (a) => { const b = [...a]; a.length = 0; while(b.length > 0){ a.push(b.splice(sRand.randI % b.length, 1)[0]) }; return a };
+
+
